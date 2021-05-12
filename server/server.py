@@ -5,31 +5,36 @@ import random
 
 app = flask.Flask(__name__)
 
-@app.route('/')
-def index():
-    # return 'Ciao'
-    return flask.json.jsonify(['Ciao', 'mondo', '2'])
-
-def generate_random_services(n=100):
-    """Generate random services for testing purposes."""
-    services = []
-    for i in range(n):
-        type_ = uuid.uuid4()
-        services.append({
-            'name': uuid.uuid4(),
-            'type': type_,
-            'location': (random.random(), random.random()),
-        })
-    return services
-
-services = generate_random_services()
+# Test services data
+services_data = [
+    {
+        'name': 'Food Truck',
+        'latitude': 88.9,
+        'longitude': 67.9,
+    },
+    {
+        'name': 'Delivery Driver',
+        'latitude': 88.9,
+        'longitude': 100.2,
+    },
+    {
+        'name': 'Carpenter',
+        'latitude': 10.9,
+        'longitude': 44.9,
+    },
+    {
+        'name': 'Cleaning Company',
+        'latitude': 22.0,
+        'longitude': 78.0
+    },
+]
 
 @app.route('/services')
 def services():
     """Services route for getting all services."""
-    return flask.json.jsonify(services)
+    return flask.json.jsonify(services_data)
 
-#@app.route('/services/<service_id:int>', method=['get', 'post'])
-#def service():
-#    """Single service endpoint."""
-#    pass
+@app.route('/services/<int:service_id>', methods=('get', 'post'))
+def service(service_id):
+    """Single service endpoint."""
+    # TODO

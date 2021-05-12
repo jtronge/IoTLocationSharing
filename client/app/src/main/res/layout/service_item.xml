@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/design_default_color_secondary"
+    android:layout_margin="4dp"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/service_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test value" />
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="55.0" />
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="77.0" />
+</LinearLayout>
